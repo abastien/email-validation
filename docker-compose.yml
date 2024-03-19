@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  email-validation-cli:
+    build:
+      context: .
+      args:
+        - USER_NAME
+    volumes:
+      - .:/app
+      - ~/.ssh:/home/${USER_NAME}/.ssh
+    working_dir: /app
